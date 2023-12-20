@@ -1,0 +1,1 @@
+This deploys, fairly similarly to AWS with many additional config requirements.
