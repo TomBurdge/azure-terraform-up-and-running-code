@@ -2,4 +2,10 @@ Azure seems to have many more requirements to get a public IP that can be connec
 
 This makes sense, Azure and Microsoft are known for being pretty security heavy.
 
-This doesn't really work like it should (able to ping) probably because of a firewall/or because the VM doesn't support remote calls in quite the same way as AWS.
+I *finally* got this working! If you run this and then go to the public IP address on your browser it says "Hello World!"
+
+This requires generation of a .ssh key and has some flaws in the code.
+
+ssh adminuser@<public_ip_of_vm>
+-- to ssh into the vm. Useful for checking and troubleshooting.
+Useful for troubleshooting if having issues but deployed vm successfully.

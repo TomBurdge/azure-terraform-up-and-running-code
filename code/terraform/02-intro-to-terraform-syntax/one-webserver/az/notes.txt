@@ -1,0 +1,2 @@
+ssh adminuser@<public_ip_of_vm>
+-- to ssh into the vm. Useful for checking and troubleshooting.
