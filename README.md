@@ -11,7 +11,8 @@ I also sometimes find it to make use of code examples in O'Reilly books; rather 
 Since it is not straightforward (admittedly, sometimes not possible) to refactor AWS terraform code to Azure terraform code, the aim of this repo is to do exactly that. 
 
 This should be a good challenge, and it will be fun to see how feasible it is.
-I expect some will be surprised at how similar services across providers are at the most basic level; a container is exactly that on any cloud provider, and so is a data warehouse.
+
+I expect I will be surprised at how similar services across providers are at the most basic level; a container is exactly that on any cloud provider, and so is a data warehouse.
 
 # ReadMe From Forked Repo:
 
