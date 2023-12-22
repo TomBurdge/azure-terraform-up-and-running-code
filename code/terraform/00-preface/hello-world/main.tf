@@ -8,13 +8,43 @@ terraform {
     }
   }
 }
-
 provider "aws" {
-  region = "us-east-2"
+  region = "eu-west-2"
 }
 
-resource "aws_instance" "example" {
-  ami           = "ami-0fb653ca2d3203ac1"
+resource "aws_vpc" "example" {
+  cidr_block = "172.16.0.0/16"
+
+  tags = {
+    Name = "tf-example"
+  }
+}
+
+resource "aws_subnet" "example" {
+  vpc_id            = aws_vpc.example.id
+  cidr_block        = "172.16.10.0/24"
+  availability_zone = "eu-west-2a"
+
+  tags = {
+    Name = "tf-example"
+  }
+}
+
+
+
+data "aws_ami" "amzn-linux-2023-ami" {
+  most_recent = true
+  owners      = ["amazon"]
+
+  filter {
+    name   = "name"
+    values = ["al2023-ami-2023.*-x86_64"]
+  }
+}
+
+resource "aws_instance" "instanceexample" {
+  ami           = data.aws_ami.amzn-linux-2023-ami.id
   instance_type = "t2.micro"
+  subnet_id     = aws_subnet.example.id
 }
 
